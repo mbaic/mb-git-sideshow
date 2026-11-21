@@ -10,6 +10,14 @@ Just-for-fun canvas plugins for the GitHub Copilot app, all in one plugin market
 | Git Weather Channel | *Planned.* Repo churn as a weather forecast. |
 | Dependency Tarot | *Planned.* Past, present and future, drawn from your dependencies. |
 
+## Mockups
+
+Screenshots from headless Chromium against fixture repos (regenerate with `node docs/mocks/generate.mjs`). Real use will look the same, drawn from your own repo.
+
+| Commit Constellations | Build Horoscope | Standup Séance |
+|---|---|---|
+| ![Commit Constellations](docs/mocks/commit-constellations.png) | ![Build Horoscope](docs/mocks/build-horoscope.png) | ![Standup Séance](docs/mocks/standup-seance.png) |
+
 > Status: all three canvases are implemented and tested against an SDK stub. They have not yet been run inside the Copilot app: follow [docs/prompts/00-manual-test.md](docs/prompts/00-manual-test.md). See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 The screenshots below are mockups: headless Chromium against fixture repos (regenerate with `node docs/mocks/generate.mjs`). Your own repo renders the same way.
