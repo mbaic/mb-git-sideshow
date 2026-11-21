@@ -16,3 +16,29 @@ Goal: answer open points 1, 2, 3 and 5 in `docs/specs/platform-contract.md`. Bra
 7. **SSE (point 5, optional).** Not exercised by hello-canvas; leave unverified until Phase 1 of a real canvas.
 
 Report back: pass/fail per step, the cwd and workspacePath values, and tool names seen.
+
+# After Phase 0 passes: per-plugin checks
+
+Install each plugin from the `git-sideshow` marketplace (Customize → Plugins → Install), open a session in a git repo with some history, then:
+
+## commit-constellations
+1. Ask "show me the commit sky". See: side panel with stars, constellations, labels; the agent narrates in about 80 words.
+2. Hover a star: tooltip. Click one: card with "Ask Copilot about this commit"; press it: the agent explains the commit.
+3. Press Play history; drag the slider. Smooth on a repo with ~1500 commits?
+4. Say "highlight <author>": the sky dims everything else **without reload** (this proves SSE or the polling fallback; note which took over: a delay of about 4 s means polling).
+5. Open it in a folder that is not a repo: friendly empty message.
+
+## build-horoscope
+1. Ask "cast my build horoscope" on a feature branch. See: wheel with the sign lit, planets, rule-based reading; then the agent's reading replaces it (shows "Reading by Copilot").
+2. Switch branch in the picker: wheel redraws, sign changes. On the default branch the sign is The North Star.
+3. Press "Ask the stars again": the agent writes a new reading.
+4. Check the numbers (behind/ahead, stashes, dirty files) against `git status` and `git rev-list --left-right --count main...HEAD`.
+
+## standup-seance
+1. Ask "hold a standup seance". See: board, candles, raw whispers list, then the planchette spells the headline and the parchment appears with Done / Next / Blockers.
+2. Press Copy and paste somewhere: the update comes out as plain text.
+3. Switch to "Last 7 days" and press Summon.
+4. If commits you made through the GitHub web UI are missing: open "Extra email addresses", add your `...@users.noreply.github.com` address, Save, Summon again.
+5. Settings should survive closing the canvas (file under `~/.copilot/extensions/standup-seance/settings.json`).
+
+Report anything that differs, especially: panel never opens, "canvas not found", wrong folder (workspace), no live update, agent chats instead of calling `speak` / `deliver_reading`.

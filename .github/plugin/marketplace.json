@@ -21,6 +21,12 @@
       "description": "A daily horoscope for your branch, from real git signals.",
       "version": "0.1.0",
       "source": "./plugins/build-horoscope"
+    },
+    {
+      "name": "standup-seance",
+      "description": "A spirit board that writes your standup from your commits.",
+      "version": "0.1.0",
+      "source": "./plugins/standup-seance"
     }
   ]
 }

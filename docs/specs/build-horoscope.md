@@ -75,7 +75,7 @@ On the default branch: sign is "The North Star", no Mercury or Saturn, and the r
 
 ### 4.4 Agent reading
 
-On open and on Refresh, the server calls `session.send` with the signal values, the sign and these instructions:
+On Refresh (not on open: the skill drives the first reading, so opening costs no agent turn), the server calls `session.send` with the signal values, the sign and these instructions:
 
 - Write a horoscope of at most 60 words in the voice of a newspaper astrologer.
 - Every claim must trace back to a supplied signal. Do not invent facts about the repo.
