@@ -10,11 +10,11 @@ Just-for-fun canvas plugins for the GitHub Copilot app, all in one plugin market
 | Git Weather Channel | *Planned.* Repo churn as a weather forecast. |
 | Dependency Tarot | *Planned.* Past, present and future, drawn from your dependencies. |
 
-> Status: early development. Nothing is installable yet. See [docs/ROADMAP.md](docs/ROADMAP.md).
+> Status: all three canvases are implemented and tested against an SDK stub. They have not yet been run inside the Copilot app: follow [docs/prompts/00-manual-test.md](docs/prompts/00-manual-test.md). See [docs/ROADMAP.md](docs/ROADMAP.md).
 
 ## Install (once released)
 
-In the GitHub Copilot app: **Customize → Plugins**, add the marketplace `<your-github-login>/git-sideshow`, then install a plugin.
+In the GitHub Copilot app: **Customize → Plugins**, add the marketplace `mbaic/git-sideshow`, then install a plugin.
 
 ## How this repo is built
 
@@ -23,3 +23,7 @@ The specs in [docs/specs](docs/specs) describe every plugin. Development runs on
 ## License
 
 MIT
+
+## Tests
+
+`node --test` (Node 20+, no dependencies).

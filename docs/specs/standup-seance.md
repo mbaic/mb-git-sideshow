@@ -25,7 +25,7 @@ No single source returns every commit you made everywhere. Two sources cover it 
 
 The obvious query is wrong in both directions. `git log --since/--until` filters on **committer** date and only walks the current branch, so on the fixture it returned 2 commits for "yesterday": one false positive (authored 10 days ago, rebased yesterday) and only 1 of the 4 real ones.
 
-**Step 1, coarse prefilter in git:**
+**Step 1, coarse prefilter in git** (uses `--fixed-strings` so emails match literally; Node re-checks the exact email; git stops walking at the first commit older than `--since`, so wildly out-of-order committer dates could hide commits):
 
 ```
 git log --all --no-merges --author=<EMAIL_1> --author=<EMAIL_2> --since=<windowStartIso> --pretty=format:%h%x1f%aI%x1f%s
@@ -47,7 +47,7 @@ Fixture result for "yesterday": exactly the 4 expected commits (unmerged branch,
 
 - Default email: `git config user.email`.
 - Extra emails: user-supplied list, needed because commits made through the GitHub web UI or squash merges often carry the `…@users.noreply.github.com` address. Without it those commits are silently missed.
-- Store the list in a small JSON file beside the extension. Never send emails to the agent or any remote service.
+- Store the list in a small JSON file at `$COPILOT_HOME/extensions/standup-seance/settings.json` (a plugin install folder may be replaced on update, so not beside the extension). Never send emails to the agent or any remote service.
 
 ### 2.3 Source B: GitHub search (v0.2)
 
