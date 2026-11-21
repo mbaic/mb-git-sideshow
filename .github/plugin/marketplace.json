@@ -15,6 +15,12 @@
       "description": "Your git history as a night sky: commits are stars, authors are constellations, reverts are shooting stars.",
       "version": "0.1.0",
       "source": "./plugins/commit-constellations"
+    },
+    {
+      "name": "build-horoscope",
+      "description": "A daily horoscope for your branch, from real git signals.",
+      "version": "0.1.0",
+      "source": "./plugins/build-horoscope"
     }
   ]
 }
