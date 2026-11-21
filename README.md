@@ -1,2 +1,25 @@
-# mb-git-sideshow
-Just-for-fun canvas plugins for the GitHub Copilot app: your git history as a night sky, a standup séance, a branch horoscope and more.
+# git-sideshow
+
+Just-for-fun canvas plugins for the GitHub Copilot app, all in one plugin marketplace.
+
+| Plugin | What it does |
+|---|---|
+| Commit Constellations | Your git history as a night sky: commits are stars, authors are constellations, reverts are shooting stars. |
+| Build Horoscope | A daily horoscope for your branch, read from real git signals. Mercury is in retrograde and so is your branch. |
+| Standup Séance | A spirit board summons your commits from yesterday or the last 7 days and spells out your standup. |
+| Git Weather Channel | *Planned.* Repo churn as a weather forecast. |
+| Dependency Tarot | *Planned.* Past, present and future, drawn from your dependencies. |
+
+> Status: early development. Nothing is installable yet. See [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## Install (once released)
+
+In the GitHub Copilot app: **Customize → Plugins**, add the marketplace `<your-github-login>/git-sideshow`, then install a plugin.
+
+## How this repo is built
+
+The specs in [docs/specs](docs/specs) describe every plugin. Development runs one phase per session with an AI agent; the agent's working rules are in [CLAUDE.md](CLAUDE.md).
+
+## License
+
+MIT
