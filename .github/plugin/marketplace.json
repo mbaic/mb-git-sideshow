@@ -1,12 +1,20 @@
 {
   "name": "git-sideshow",
-  "owner": { "name": "mbaic" },
+  "owner": {
+    "name": "mbaic"
+  },
   "plugins": [
     {
       "name": "hello-canvas",
       "description": "Throwaway Phase 0 plugin: proves canvases load from an installed plugin.",
       "version": "0.1.0",
       "source": "./plugins/hello-canvas"
+    },
+    {
+      "name": "commit-constellations",
+      "description": "Your git history as a night sky: commits are stars, authors are constellations, reverts are shooting stars.",
+      "version": "0.1.0",
+      "source": "./plugins/commit-constellations"
     }
   ]
 }

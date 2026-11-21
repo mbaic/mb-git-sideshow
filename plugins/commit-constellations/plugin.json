@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "commit-constellations",
+  "version": "0.1.0",
+  "description": "Your git history as a night sky: commits are stars, authors are constellations, reverts are shooting stars.",
+  "license": "MIT"
+}

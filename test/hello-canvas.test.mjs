@@ -51,3 +51,15 @@ test("manifests are consistent", async () => {
   assert.equal(entry.source, "./plugins/hello-canvas");
   assert.equal(pj.$schema, "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json");
 });
+
+test("every marketplace entry points at a plugin whose manifest matches", async () => {
+  const { readFile } = await import("node:fs/promises");
+  const mk = JSON.parse(await readFile(new URL("../.github/plugin/marketplace.json", import.meta.url)));
+  for (const e of mk.plugins) {
+    const pj = JSON.parse(await readFile(new URL(`../${e.source}/plugin.json`, import.meta.url)));
+    assert.equal(pj.name, e.name);
+    assert.equal(pj.version, e.version, `${e.name}: version mismatch`);
+    const ext = new URL(`../${e.source}/com.github.copilot/extensions/${e.name}/extension.mjs`, import.meta.url);
+    await readFile(ext);
+  }
+});
