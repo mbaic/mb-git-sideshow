@@ -18,8 +18,9 @@ export function git(cwd, args, env = {}) {
   return execFileSync("git", args, { cwd, encoding: "utf8", env: { ...process.env, ...env }, stdio: ["ignore", "pipe", "pipe"] });
 }
 
-export function makeRepo({ branch = "main" } = {}) {
-  const dir = mkdtempSync(join(tmpdir(), "sideshow-"));
+export function makeRepo({ branch = "main", name = "repo" } = {}) {
+  const dir = join(mkdtempSync(join(tmpdir(), "sideshow-")), name);
+  mkdirSync(dir);
   git(dir, ["init", "-q", "-b", branch]);
   git(dir, ["config", "user.name", "Test User"]);
   git(dir, ["config", "user.email", "test@example.com"]);
