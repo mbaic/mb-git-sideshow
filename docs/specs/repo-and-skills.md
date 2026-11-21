@@ -29,7 +29,7 @@ git-sideshow/
 
 Install then reads as `standup-seance@git-sideshow`.
 
-**Still to verify:** that canvases load from `com.github.copilot/extensions/` inside a plugin (see [platform-contract.md](platform-contract.md)).
+**Still to verify (manual test):** that canvases load from `com.github.copilot/extensions/` inside a plugin (see [platform-contract.md](platform-contract.md)).
 
 ## 2. What changes in the three existing specs
 
@@ -42,7 +42,7 @@ open_canvas({ canvasId, instanceId })
 invoke_canvas_action({ instanceId, actionName, input })
 ```
 
-**Pitfall.** Those tool names come from one public repo's README, not from official docs. Confirm them in Phase 0. The skills below name them once each, so a rename is a five-line fix.
+**Pitfall.** Those tool names come from one third-party README (`open_canvas` also takes optional `input`; `list_canvas_capabilities` exists), not from official docs. Phase 0 manual test confirms them. The skills below name them once each, so a rename is a five-line fix.
 
 ## 3. Skill drafts
 
@@ -181,11 +181,11 @@ Rules:
 ```json
 {
   "name": "git-sideshow",
-  "owner": { "name": "<your GitHub login>" },
+  "owner": { "name": "mbaic" },
   "plugins": [
-    { "name": "commit-constellations", "version": "0.1.0", "source": "plugins/commit-constellations", "description": "Your git history as a night sky." },
-    { "name": "standup-seance",        "version": "0.1.0", "source": "plugins/standup-seance",        "description": "A spirit board that writes your standup from your commits." },
-    { "name": "build-horoscope",       "version": "0.1.0", "source": "plugins/build-horoscope",       "description": "A daily horoscope for your branch, from real git signals." }
+    { "name": "commit-constellations", "version": "0.1.0", "source": "./plugins/commit-constellations", "description": "Your git history as a night sky." },
+    { "name": "standup-seance",        "version": "0.1.0", "source": "./plugins/standup-seance",        "description": "A spirit board that writes your standup from your commits." },
+    { "name": "build-horoscope",       "version": "0.1.0", "source": "./plugins/build-horoscope",       "description": "A daily horoscope for your branch, from real git signals." }
   ]
 }
 ```

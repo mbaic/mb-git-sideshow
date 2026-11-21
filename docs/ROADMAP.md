@@ -4,10 +4,10 @@ Update this file at the end of every session.
 
 ## Phase 0: platform check
 
-- [ ] Repo scaffold and `marketplace.json`
-- [ ] Throwaway `hello-canvas` plugin (canvas, one action, one skill)
-- [ ] SDK stub and test harness in `test/`
-- [ ] Open points 1 to 5 in `docs/specs/platform-contract.md` answered
+- [x] Repo scaffold and `marketplace.json`
+- [x] Throwaway `hello-canvas` plugin (canvas, one action, one skill)
+- [x] SDK stub and test harness in `test/`
+- [ ] Open points 1 to 5 in `docs/specs/platform-contract.md` answered (4 done; 1, 3, 5 need the manual test; 2 partly)
 - [ ] Manual test in the Copilot app passed
 
 ## Commit Constellations
@@ -39,4 +39,4 @@ Update this file at the end of every session.
 
 | Date | Decision |
 |---|---|
-| | |
+| 2026-11-21 | Keep canvas path `com.github.copilot/extensions/<id>/`; fall back to a plugin-root `extensions/` dir if manual test fails. Stub is a resolve hook in `test/stub/`. |
