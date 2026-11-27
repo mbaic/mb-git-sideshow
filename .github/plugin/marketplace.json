@@ -1,0 +1,32 @@
+{
+  "name": "mb-git-sideshow",
+  "owner": {
+    "name": "mbaic"
+  },
+  "plugins": [
+    {
+      "name": "mb-hello-canvas",
+      "description": "Throwaway Phase 0 plugin: proves canvases load from an installed plugin.",
+      "version": "0.4.0",
+      "source": "./plugins/mb-hello-canvas"
+    },
+    {
+      "name": "mb-commit-constellations",
+      "description": "Your git history as a night sky: commits are stars, authors are constellations, reverts are shooting stars.",
+      "version": "0.4.0",
+      "source": "./plugins/mb-commit-constellations"
+    },
+    {
+      "name": "mb-build-horoscope",
+      "description": "A daily horoscope for your branch, from real git signals.",
+      "version": "0.4.0",
+      "source": "./plugins/mb-build-horoscope"
+    },
+    {
+      "name": "mb-standup-seance",
+      "description": "A spirit board that writes your standup from your commits.",
+      "version": "0.4.0",
+      "source": "./plugins/mb-standup-seance"
+    }
+  ]
+}
